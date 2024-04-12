@@ -1,3 +1,5 @@
+// Task 5
+
 #include <stdio.h>
 #include <setjmp.h>
 #include <signal.h>
@@ -12,7 +14,7 @@ static void catch_segv()
 int main()
 {
     // The address of our secret data - replace this too
-    unsigned long kernel_data_addr = 0xfb61b000;
+    unsigned long kernel_data_addr = 0xfab22000;
     // Register a signal handler
     signal(SIGSEGV, catch_segv);
     if (sigsetjmp(jbuf, 1) == 0)

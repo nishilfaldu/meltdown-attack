@@ -9,7 +9,7 @@
 #include <linux/seq_file.h>
 #include <linux/uaccess.h>
 
-static char secret[8] = {’S’, ’E’, ’E’, ’D’, ’L’, ’a’, ’b’, ’s’};
+static char secret[8] = {'S', 'E', 'E', 'D', 'L', 'a', 'b', 's'};
 static struct proc_dir_entry *secret_entry;
 static char *secret_buffer;
 

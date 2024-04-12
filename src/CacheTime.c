@@ -2,6 +2,8 @@
 
 #include <emmintrin.h>
 #include <x86intrin.h>
+#include <stdio.h>
+#include <stdint.h>
 
 uint8_t array[10 * 4096];
 
@@ -24,9 +26,9 @@ int main(int argc, const char **argv)
     {
         addr = &array[i * 4096];
         time1 = __rdtscp(&junk);
-        ¿ junk = *addr;
+        junk = *addr;
         time2 = __rdtscp(&junk) - time1;
-        ¡ printf("Access time for array[%d*4096]: %d CPU cycles\n", i, (int)time2);
+        printf("Access time for array[%d*4096]: %d CPU cycles\n", i, (int)time2);
     }
     return 0;
 }

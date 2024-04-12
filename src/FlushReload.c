@@ -2,6 +2,10 @@
 
 #include <emmintrin.h>
 #include <x86intrin.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
 uint8_t array[256 * 4096];
 int temp;
 char secret = 94;
